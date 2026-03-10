@@ -1,22 +1,88 @@
 {
     "missions": [
         {
-            "category": "Phishing Defense",
-            "title": "Email Analysis",
-            "prompt": "Review yesterday's incoming emails for any organization, identifying signals of phishing attempts, such as dubious sender addresses, unexpected attachments, or urgency-invoking content.",
-            "description": "Identifying the subtleties that betray the presence of phishing emails."
+            "category": "Web Security",
+            "title": "Input Validation & Harm Prevention",
+            "prompt": "How can we make sure anything someone types into a website doesn't cause harm? Create a guide for developers on checking everything that comes in to keep bad codes or hacks out.",
+            "description": "Checking everything that comes in (Mission 1)."
         },
         {
-            "category": "Secure Coding",
-            "title": "SQL Injection Detection",
-            "prompt": "Analyze this block of Java code for potential security vulnerabilities that could lead to SQL injection attacks. Provide suggestions for mitigating these vulnerabilities.",
-            "description": "Proactive code review to stop attacks before they are deployed."
+            "category": "Web Security",
+            "title": "SQL Injection Deep Dive",
+            "prompt": "Describe in detail the process of a SQL injection attack on an ecommerce platform, including the signs of compromise and immediate mitigation steps.",
+            "description": "Detailed analysis of SQLi vulnerabilities (Prompt 2)."
+        },
+        {
+            "category": "Threat Identification",
+            "title": "Linux Server Vulnerabilities",
+            "prompt": "Identify the top five potential vulnerabilities in a Linux-based web server environment that could be exploited in the next 30 days, considering recent trends in cyber threats.",
+            "description": "Initiating Threat Identification (Prompt 1)."
+        },
+        {
+            "category": "Threat Identification",
+            "title": "Predictive Threat Analysis",
+            "prompt": "What are the predicted emerging cybersecurity threats for cloud storage systems in the next quarter, based on current AI and machine learning algorithm advancements?",
+            "description": "Forward-looking threat modeling (Prompt 3)."
+        },
+        {
+            "category": "Defensive Operations",
+            "title": "Incident Response Strategy",
+            "prompt": "Given a detected unauthorized access in a corporate network, outline a step-by-step incident response plan, including immediate actions and long-term mitigation strategies.",
+            "description": "Response and Mitigation Strategy (Prompt 4)."
+        },
+        {
+            "category": "Network Security",
+            "title": "Secure Configuration Audit",
+            "prompt": "Conduct a security configuration audit for a corporate Wi-Fi network, identifying any default or weak configurations and recommend best practices for hardening.",
+            "description": "Audit for oversight or misconfiguration (Prompt 1)."
+        },
+        {
+            "category": "Network Security",
+            "title": "Firewall Log Analysis",
+            "prompt": "Analyze the last month's firewall logs for an SME's network, identifying any unusual access patterns or potential breach attempts.",
+            "description": "Proactive measure in identifying threats (Prompt 2)."
+        },
+        {
+            "category": "Network Security",
+            "title": "Intrusion Detection Analysis",
+            "prompt": "Review the alerts from an intrusion detection system (IDS) over the past week for a government network, categorizing the alerts by severity and suggesting actionable responses.",
+            "description": "Categorizing alerts and responses (Prompt 3)."
+        },
+        {
+            "category": "Phishing Defense",
+            "title": "Email Phishing Analysis",
+            "prompt": "Review yesterday's incoming emails for any organization, identifying signals of phishing attempts, such as dubious sender addresses, unexpected attachments, or urgency-invoking content.",
+            "description": "Analyzing email for phishing signs (Prompt 1)."
+        },
+        {
+            "category": "Phishing Defense",
+            "title": "Spear-Phishing Counteractions",
+            "prompt": "Develop a protocol for immediate action when high-profile employees are targeted by spear-phishing attempts, including steps for verification and post-attempt analysis.",
+            "description": "Deflecting precision strikes (Prompt 4)."
         },
         {
             "category": "Identity & Access",
-            "title": "OAuth 2.0 Implementation",
-            "prompt": "Outline the best practices for implementing OAuth 2.0 in a web application, focusing on securing the authentication tokens against theft and misuse.",
-            "description": "Securing the gateway to digital identities."
+            "title": "Password Strength Analysis",
+            "prompt": "Evaluate the strength of a provided password list for a company's employee accounts, highlighting the ones easily susceptible to common hacking techniques.",
+            "description": "Testing passwords against cyber assaults (Prompt 1)."
+        },
+        {
+            "category": "Identity & Access",
+            "title": "Predictive Password Flaw Detection",
+            "prompt": "Predict potential vulnerabilities in current password creation trends within the organization, suggesting a strategic overhaul to pre-empt future breaches.",
+            "description": "AI-driven predictive capabilities (Prompt 3)."
+        },
+        {
+            "category": "Secure Coding",
+            "title": "Identifying Code Vulnerabilities",
+            "prompt": "Analyze this block of Java code for potential security vulnerabilities that could lead to SQL injection attacks. Provide suggestions for mitigating these vulnerabilities.",
+            "description": "Reviewing source code for flaws (Prompt 1)."
+        },
+        {
+            "category": "Secure Coding",
+            "title": "Encryption Best Practices",
+            "prompt": "Explain the most effective encryption techniques for protecting user data in mobile applications, including key management best practices.",
+            "description": "Guarding info in mobile apps (Prompt 2)."
         }
     ]
 }

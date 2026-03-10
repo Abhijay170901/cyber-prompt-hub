@@ -1,35 +1,58 @@
 import streamlit as st
 import json
 
-# Page config
-st.set_page_config(page_title="CyberPrompt AI Hub", page_icon="🛡️")
+st.set_page_config(page_title="CyberPrompt AI Hub", page_icon="🛡️", layout="wide")
 
-# Custom CSS for a professional look
+# Dark Theme Customization
 st.markdown("""
     <style>
-    .main { background-color: #0e1117; }
-    .stMarkdown { color: #fafafa; }
+    .stApp { background-color: #0b0e14; color: #e0e0e0; }
+    .stCodeBlock { border: 1px solid #00ff41 !important; border-radius: 8px; }
+    .st-expander { background-color: #161b22 !important; border: 1px solid #30363d !important; }
+    h1, h2, h3 { color: #58a6ff; }
     </style>
     """, unsafe_allow_html=True)
 
-# Load Prompts
-with open('prompts.json') as f:
-    data = json.load(f)
+# Load the full database
+try:
+    with open('prompts.json') as f:
+        data = json.load(f)
+except FileNotFoundError:
+    st.error("Missing prompts.json file!")
+    data = {"missions": []}
 
 st.title("🛡️ CyberPrompt AI Hub")
-st.sidebar.header("Mission Control")
-category = st.sidebar.selectbox("Select a Domain", list(set(m['category'] for m in data['missions'])))
+st.markdown("### Advanced AI Framework for Cybersecurity Operations")
+st.write(f"Showing {len(data['missions'])} professional security missions.")
 
-st.subheader(f"Domain: {category}")
-
-# Filter and display prompts
-for m in data['missions']:
-    if m['category'] == category:
-        with st.expander(f"🚀 {m['title']}"):
-            st.write(m['description'])
-            st.info(m['prompt'])
-            if st.button("Copy to Clipboard", key=m['title']):
-                st.write("Copied!")
+# Sidebar Navigation
+st.sidebar.title("Mission Control")
+categories = sorted(list(set(m['category'] for m in data['missions'])))
+selected_cat = st.sidebar.selectbox("Choose a Security Domain", categories)
 
 st.sidebar.markdown("---")
-st.sidebar.write("👤 **Developed by Abhijay Nair**")
+st.sidebar.write(f"👤 **Developer:** Abhijay")
+st.sidebar.write("📍 *Calgary, AB*")
+
+# Display Missions in the selected category
+st.header(f"Domain: {selected_cat}")
+missions = [m for m in data['missions'] if m['category'] == selected_cat]
+
+# Two-column layout
+cols = st.columns(2)
+for i, m in enumerate(missions):
+    with cols[i % 2]:
+        with st.container():
+            st.subheader(m['title'])
+            st.caption(m['description'])
+            
+            st.markdown("**Target Prompt:**")
+            st.code(m['prompt'], language="text")
+            
+            # THE DROPDOWN DETAILS
+            with st.expander("🔍 Deep Dive: Why & How"):
+                st.markdown(f"**🚩 The Threat (Why):**\n{m['why']}")
+                st.markdown(f"**⚙️ AI Strategy (How):**\n{m['how']}")
+            st.divider()
+
+st.caption("© 2026 Abhijay - Cybersecurity Portfolio Project")

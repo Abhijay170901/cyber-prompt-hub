@@ -1,164 +1,264 @@
 {
-    "missions": [
-        {
-            "category": "Web Security Missions",
-            "title": "The Digital Detective: Harm Prevention",
-            "prompt": "How can we make sure anything someone types into a website doesn't cause harm? Create a guide for developers on checking everything that comes in to keep bad codes or hacks out.",
-            "description": "Checking everything that comes in (Mission 1).",
-            "why": "User input is the primary attack vector for XSS and Injection. Without validation, a website is essentially an open door for malicious scripts.",
-            "how": "This prompt uses a 'Persona-Based' approach (The Detective) to simplify complex sanitization concepts into an actionable developer guide."
-        },
-        {
-            "category": "Web Security Missions",
-            "title": "SQL Injection Deep Dive",
-            "prompt": "Describe in detail the process of a SQL injection attack on an ecommerce platform, including the signs of compromise and immediate mitigation steps.",
-            "description": "Detailed analysis of SQLi vulnerabilities (Prompt 2).",
-            "why": "Ecommerce sites handle PII and credit card data. SQLi is the fastest way for an attacker to dump those databases.",
-            "how": "It uses 'Step-by-Step' constraints to ensure the AI covers the full lifecycle: Identification, Exploitation, and Remediation."
-        },
-        {
-            "category": "Threat Identification",
-            "title": "Linux Server Vulnerability Audit",
-            "prompt": "Identify the top five potential vulnerabilities in a Linux-based web server environment that could be exploited in the next 30 days, considering recent trends in cyber threats.",
-            "description": "Initiating Threat Identification (Prompt 1).",
-            "why": "Security is a race against time. Knowing what is likely to be exploited *soon* allows for prioritized patching.",
-            "how": "By adding a '30-day' temporal constraint, it forces the AI to ignore old CVEs and focus on active, trending exploits."
-        },
-        {
-            "category": "Threat Identification",
-            "title": "Cloud Predictive Analysis",
-            "prompt": "What are the predicted emerging cybersecurity threats for cloud storage systems in the next quarter, based on current AI and machine learning algorithm advancements?",
-            "description": "Forward-looking threat modeling (Prompt 3).",
-            "why": "Attackers are now using AI to find misconfigured S3 buckets. Defenders must use AI to predict those moves first.",
-            "how": "This prompt leverages 'Cross-Domain Synthesis' by asking the AI to correlate ML advancements with cloud storage weaknesses."
-        },
-        {
-            "category": "Network Defense",
-            "title": "Corporate Wi-Fi Hardening",
-            "prompt": "Conduct a security configuration audit for a corporate Wi-Fi network, identifying any default or weak configurations and recommend best practices for hardening.",
-            "description": "Audit for oversight or misconfiguration (Prompt 1).",
-            "why": "Wi-Fi is the physical perimeter of an office. Default passwords or weak WPA3 implementations are common entry points.",
-            "how": "It acts as a 'Configuration Reviewer,' focusing on 'Hardening' which moves the AI from just identifying problems to solving them."
-        },
-        {
-            "category": "Network Defense",
-            "title": "Firewall Log Anomaly Detection",
-            "prompt": "Analyze the last month's firewall logs for an SME's network, identifying any unusual access patterns or potential breach attempts.",
-            "description": "Proactive measure in identifying threats (Prompt 2).",
-            "why": "Breaches often go unnoticed for months. Periodic log analysis reduces 'Dwell Time' by spotting slow-and-low attacks.",
-            "how": "This uses 'Pattern Recognition' logic to simulate a SOC Analyst searching for lateral movement or data exfiltration."
-        },
-        {
-            "category": "Network Defense",
-            "title": "IDS Alert Categorization",
-            "prompt": "Review the alerts from an intrusion detection system (IDS) over the past week for a government network, categorizing the alerts by severity and suggesting actionable responses.",
-            "description": "Categorizing alerts and responses (Prompt 3).",
-            "why": "Alert fatigue is real. Categorizing by severity ensures that high-risk threats (like remote code execution) are handled before low-risk scans.",
-            "how": "It applies 'Severity Ranking' logic to help the user understand how to prioritize incident response workflows."
-        },
-        {
-            "category": "Phishing & Social Engineering",
-            "title": "Email Analysis (The Sailor's Lens)",
-            "prompt": "Review yesterday's incoming emails for any organization, identifying signals of phishing attempts, such as dubious sender addresses, unexpected attachments, or urgency-invoking content.",
-            "description": "Analyzing email for phishing signs (Prompt 1).",
-            "why": "Phishing is the #1 delivery method for ransomware. Spotting 'urgency' markers is the best way to prevent clicks.",
-            "how": "It uses 'Feature Extraction' by listing specific markers (dubious addresses, attachments) to guide the AI's detection engine."
-        },
-        {
-            "category": "Phishing & Social Engineering",
-            "title": "Phishing Awareness Training",
-            "prompt": "Design a phishing awareness training module for new employees of a tech firm, including common tactics used by phishers, examples of phishing emails, and steps to take when a suspicious email is received.",
-            "description": "Education as the best defense (Prompt 2).",
-            "why": "A trained employee is a human firewall. Simulations are the most effective way to lower the click-through rate on real attacks.",
-            "how": "This prompt creates an 'Educational Framework,' ensuring that the AI provides both theory (tactics) and practice (examples)."
-        },
-        {
-            "category": "Phishing & Social Engineering",
-            "title": "Website Phishing Detection",
-            "prompt": "Scan the web for fake websites masquerading as a popular online retail store, cataloging features that distinguish them from the legitimate site, such as URL discrepancies and poor design.",
-            "description": "Navigating hidden reefs in the web ocean (Prompt 3).",
-            "why": "Credential harvesting via clone sites is a massive risk. Users need to know how to spot 'look-alike' domains.",
-            "how": "It uses 'Visual and Structural Comparison' logic to highlight what AI tools look for when flagging malicious URLs."
-        },
-        {
-            "category": "Phishing & Social Engineering",
-            "title": "Spear-Phishing Verification Protocol",
-            "prompt": "Develop a protocol for immediate action when high-profile employees are targeted by spear-phishing attempts, including steps for verification and post-attempt analysis.",
-            "description": "Deflecting precision strikes (Prompt 4).",
-            "why": "Executives are high-value targets (Whaling). They need a specific, fast-track verification process that regular staff might not use.",
-            "how": "This uses 'Policy Generation' prompting to create a structured SOP (Standard Operating Procedure) for VIP security."
-        },
-        {
-            "category": "Identity & Password Security",
-            "title": "Password Strength Analysis",
-            "prompt": "Evaluate the strength of a provided password list for a company's employee accounts, highlighting the ones easily susceptible to common hacking techniques.",
-            "description": "Testing passwords against cyber assaults (Prompt 1).",
-            "why": "Passwords like 'Summer2025!' are easily cracked via dictionary attacks. Regular audits keep the 'front door' locked.",
-            "how": "It uses 'Vulnerability Assessment' logic to simulate a brute-force tool's perspective on a password list."
-        },
-        {
-            "category": "Identity & Password Security",
-            "title": "Automated Policy Enforcement",
-            "prompt": "Implement a system that automatically checks and enforces compliance with the company's password policy, identifying accounts with weak passwords and suggesting improvements.",
-            "description": "Proactive defense and threshold complexity (Prompt 2).",
-            "why": "Manual enforcement is impossible in large firms. Automation ensures that every single account meets the complexity threshold.",
-            "how": "It focuses on 'Compliance Mapping,' teaching the AI to act as an automated Identity Access Management (IAM) auditor."
-        },
-        {
-            "category": "Identity & Password Security",
-            "title": "Predictive Password Flaw Detection",
-            "prompt": "Predict potential vulnerabilities in current password creation trends within the organization, suggesting a strategic overhaul to pre-empt future breaches.",
-            "description": "AI-driven predictive capabilities (Prompt 3).",
-            "why": "Users tend to follow patterns (e.g., season+year). AI can predict these patterns before an attacker does.",
-            "how": "This leverages 'Trend Forecasting' to move security from a reactive state to a proactive, predictive state."
-        },
-        {
-            "category": "Identity & Password Security",
-            "title": "AI-Generated Unique Recommendations",
-            "prompt": "Generate a list of strong, unique password recommendations tailored to each department's security needs, incorporating advanced encryption features.",
-            "description": "Fortifying every corner of the organization (Prompt 4).",
-            "why": "One size does not fit all. The Finance department needs different security layers than the Marketing department.",
-            "how": "It uses 'Tailored Output' constraints to provide high-entropy passwords based on departmental risk profiles."
-        },
-        {
-            "category": "Secure Coding & DevSecOps",
-            "title": "Java Code Vulnerability Scan",
-            "prompt": "Analyze this block of Java code for potential security vulnerabilities that could lead to SQL injection attacks. Provide suggestions for mitigating these vulnerabilities.",
-            "description": "Reviewing source code for flaws (Prompt 1).",
-            "why": "Finding a bug in the code costs $10. Finding it after a breach costs $10 million. Static analysis is vital.",
-            "how": "It uses 'Code Interpretation' to perform a virtual SAST (Static Application Security Testing) scan on the provided snippet."
-        },
-        {
-            "category": "Secure Coding & DevSecOps",
-            "title": "Mobile Encryption Best Practices",
-            "prompt": "Explain the most effective encryption techniques for protecting user data in mobile applications, including key management best practices.",
-            "description": "Guarding info in mobile apps (Prompt 2).",
-            "why": "Phones are easily lost or stolen. Data at rest must be encrypted with keys that aren't stored in plain text on the device.",
-            "how": "This focuses on 'Cryptographic Standards,' ensuring the AI recommends modern AES-256 or RSA-4096 protocols."
-        },
-        {
-            "category": "Secure Coding & DevSecOps",
-            "title": "OAuth 2.0 Implementation Guide",
-            "prompt": "Outline the best practices for implementing OAuth 2.0 in a web application, focusing on securing the authentication tokens against theft and misuse.",
-            "description": "Securing the gateway to digital identities (Prompt 3).",
-            "why": "OAuth is the industry standard for login, but misconfigured tokens can lead to account takeovers.",
-            "how": "It uses 'Architectural Review' logic to ensure the AI covers 'State' parameters and 'PKCE' (Proof Key for Code Exchange)."
-        },
-        {
-            "category": "Secure Coding & DevSecOps",
-            "title": "Android Security Checklist",
-            "prompt": "Provide a detailed security checklist for conducting code reviews on Android applications, focusing on common vulnerabilities like improper session handling and insecure data storage.",
-            "description": "Security flaws in mobile environments (Prompt 4).",
-            "why": "Android apps face unique threats like sideloading and intent-sniffing. A checklist ensures no stone is left unturned.",
-            "how": "This applies 'List Generation' constraints to create a reusable audit template for mobile developers."
-        },
-        {
-            "category": "Incident Response",
-            "title": "Unauthorized Access Response Plan",
-            "prompt": "Given a detected unauthorized access in a corporate network, outline a step-by-step incident response plan, including immediate actions and long-term mitigation strategies.",
-            "description": "Response and Mitigation Strategy (Prompt 4).",
-            "why": "The first 60 minutes after a breach determine the total damage. A clear plan prevents panic and ensures containment.",
-            "how": "This uses 'Sequential Logic' to guide the AI through the SANS Incident Response phases: Prep, ID, Containment, Eradication, Recovery."
-        }
-    ]
+  "missions": [
+    {
+      "category": "Web Security Missions",
+      "domain": "Application Security",
+      "title": "The Digital Detective: Harm Prevention",
+      "description": "Checking everything that comes into a web application.",
+      "severity": "High",
+      "difficulty": "Beginner",
+      "tags": ["input validation", "xss", "secure coding"],
+      "mitre": ["T1190"],
+      "prompt": "How can we make sure anything someone types into a website doesn't cause harm? Create a guide for developers on checking everything that comes in to keep bad codes or hacks out.",
+      "why": "User input is the primary attack vector for XSS and Injection attacks.",
+      "how": "Uses a persona-based explanation to simplify complex sanitization techniques for developers."
+    },
+    {
+      "category": "Web Security Missions",
+      "domain": "Application Security",
+      "title": "SQL Injection Deep Dive",
+      "description": "Detailed analysis of SQL injection vulnerabilities.",
+      "severity": "Critical",
+      "difficulty": "Intermediate",
+      "tags": ["sql injection", "database security"],
+      "mitre": ["T1190"],
+      "prompt": "Describe in detail the process of a SQL injection attack on an ecommerce platform, including the signs of compromise and mitigation steps.",
+      "why": "SQL injection is one of the fastest ways attackers can access sensitive databases.",
+      "how": "Forces step-by-step explanation of exploitation and remediation."
+    },
+    {
+      "category": "Threat Identification",
+      "domain": "Threat Intelligence",
+      "title": "Linux Server Vulnerability Audit",
+      "description": "Identify high-risk vulnerabilities likely to be exploited soon.",
+      "severity": "Critical",
+      "difficulty": "Advanced",
+      "tags": ["linux", "vulnerability management"],
+      "mitre": ["T1068"],
+      "prompt": "Identify the top five potential vulnerabilities in a Linux-based web server environment that could be exploited in the next 30 days, considering recent trends in cyber threats.",
+      "why": "Security teams must prioritize vulnerabilities likely to be exploited soon.",
+      "how": "Uses time-based constraints to focus on active threats."
+    },
+    {
+      "category": "Threat Identification",
+      "domain": "Threat Intelligence",
+      "title": "Cloud Predictive Analysis",
+      "description": "Predict future threats targeting cloud storage.",
+      "severity": "High",
+      "difficulty": "Advanced",
+      "tags": ["cloud security", "threat modeling"],
+      "mitre": ["T1530"],
+      "prompt": "What are the predicted emerging cybersecurity threats for cloud storage systems in the next quarter, based on current AI and machine learning algorithm advancements?",
+      "why": "Cloud storage misconfigurations are a major attack vector.",
+      "how": "Uses cross-domain analysis between AI advancements and cloud vulnerabilities."
+    },
+    {
+      "category": "Network Defense",
+      "domain": "Network Security",
+      "title": "Corporate Wi-Fi Hardening",
+      "description": "Security configuration audit for enterprise Wi-Fi.",
+      "severity": "High",
+      "difficulty": "Intermediate",
+      "tags": ["wifi security", "network hardening"],
+      "mitre": ["T1046"],
+      "prompt": "Conduct a security configuration audit for a corporate Wi-Fi network, identifying any default or weak configurations and recommend best practices for hardening.",
+      "why": "Weak Wi-Fi security can allow attackers physical network access.",
+      "how": "Focuses on configuration review and security hardening."
+    },
+    {
+      "category": "Network Defense",
+      "domain": "SOC Operations",
+      "title": "Firewall Log Anomaly Detection",
+      "description": "Analyze firewall logs for suspicious patterns.",
+      "severity": "High",
+      "difficulty": "Intermediate",
+      "tags": ["log analysis", "threat hunting"],
+      "mitre": ["T1071"],
+      "prompt": "Analyze the last month's firewall logs for an SME's network, identifying any unusual access patterns or potential breach attempts.",
+      "why": "Periodic log analysis helps detect attacks early.",
+      "how": "Uses pattern recognition to identify suspicious behavior."
+    },
+    {
+      "category": "Network Defense",
+      "domain": "SOC Operations",
+      "title": "IDS Alert Categorization",
+      "description": "Categorize IDS alerts by severity.",
+      "severity": "High",
+      "difficulty": "Intermediate",
+      "tags": ["ids", "alert triage"],
+      "mitre": ["T1046"],
+      "prompt": "Review the alerts from an intrusion detection system (IDS) over the past week for a network, categorizing the alerts by severity and suggesting actionable responses.",
+      "why": "Prioritization helps security teams respond faster.",
+      "how": "Applies severity ranking logic."
+    },
+    {
+      "category": "Phishing & Social Engineering",
+      "domain": "Email Security",
+      "title": "Email Phishing Analysis",
+      "description": "Detect phishing emails using behavioral indicators.",
+      "severity": "High",
+      "difficulty": "Beginner",
+      "tags": ["phishing", "email security"],
+      "mitre": ["T1566"],
+      "prompt": "Review yesterday's incoming emails for any organization, identifying signals of phishing attempts, such as dubious sender addresses, unexpected attachments, or urgency-invoking content.",
+      "why": "Phishing remains the most common initial attack vector.",
+      "how": "Feature extraction based detection."
+    },
+    {
+      "category": "Phishing & Social Engineering",
+      "domain": "Security Awareness",
+      "title": "Phishing Awareness Training",
+      "description": "Design a training module for employees.",
+      "severity": "Medium",
+      "difficulty": "Beginner",
+      "tags": ["training", "security awareness"],
+      "mitre": ["T1566"],
+      "prompt": "Design a phishing awareness training module for new employees , including common tactics used by phishers, examples of phishing emails, and steps to take when a suspicious email is received.",
+      "why": "Security awareness reduces phishing success rates.",
+      "how": "Combines theory and real-world examples."
+    },
+    {
+      "category": "Phishing & Social Engineering",
+      "domain": "Threat Intelligence",
+      "title": "Website Phishing Detection",
+      "description": "Identify fake websites mimicking legitimate brands.",
+      "severity": "High",
+      "difficulty": "Intermediate",
+      "tags": ["phishing", "url analysis"],
+      "mitre": ["T1583"],
+      "prompt": "Scan the web for fake websites masquerading as a popular online tech company, cataloging features that distinguish them from the legitimate site, such as URL discrepancies and poor design.",
+      "why": "Credential harvesting sites are common attack tools.",
+      "how": "Uses visual and structural comparison."
+    },
+    {
+      "category": "Phishing & Social Engineering",
+      "domain": "Security Operations",
+      "title": "Spear-Phishing Response Protocol",
+      "description": "Create a response protocol for targeted phishing attacks.",
+      "severity": "High",
+      "difficulty": "Intermediate",
+      "tags": ["spear phishing", "incident response"],
+      "mitre": ["T1566"],
+      "prompt": "Develop a protocol for immediate action when high-profile employees are targeted by spear-phishing attempts, including steps for verification and post-attempt analysis.",
+      "why": "Executives are high-value targets for attackers.",
+      "how": "Generates structured SOP workflows."
+    },
+    {
+      "category": "Identity & Password Security",
+      "domain": "Identity & Access Management",
+      "title": "Password Strength Analysis",
+      "description": "Evaluate password strength across employee accounts.",
+      "severity": "High",
+      "difficulty": "Beginner",
+      "tags": ["password security", "iam"],
+      "mitre": ["T1110"],
+      "prompt": "Evaluate the strength of a provided password list for a company's employee accounts, highlighting the ones easily susceptible to common hacking techniques.",
+      "why": "Weak passwords enable brute force attacks.",
+      "how": "Simulates password cracking analysis."
+    },
+    {
+      "category": "Identity & Password Security",
+      "domain": "Identity & Access Management",
+      "title": "Automated Password Policy Enforcement",
+      "description": "Ensure password policy compliance automatically.",
+      "severity": "Medium",
+      "difficulty": "Intermediate",
+      "tags": ["password policy", "automation"],
+      "mitre": ["T1110"],
+      "prompt": "Implement a system that automatically checks and enforces compliance with the company's password policy, identifying accounts with weak passwords and suggesting improvements.",
+      "why": "Manual enforcement is inefficient.",
+      "how": "Uses automated compliance monitoring."
+    },
+    {
+      "category": "Identity & Password Security",
+      "domain": "Identity & Access Management",
+      "title": "Predictive Password Weakness Detection",
+      "description": "Predict potential vulnerabilities in current password creation trends within the organization, suggesting a strategic overhaul to pre-empt future breaches.",
+      "severity": "Medium",
+      "difficulty": "Advanced",
+      "tags": ["password trends", "prediction"],
+      "mitre": ["T1110"],
+      "prompt": "Predict vulnerabilities in current password creation trends.",
+      "why": "Users follow predictable patterns.",
+      "how": "Trend forecasting analysis."
+    },
+    {
+      "category": "Identity & Password Security",
+      "domain": "Identity & Access Management",
+      "title": "Department-Based Password Recommendations",
+      "description": "Generate strong password recommendations.",
+      "severity": "Low",
+      "difficulty": "Beginner",
+      "tags": ["password generation"],
+      "mitre": ["T1110"],
+      "prompt": "Generate a list of strong, unique password recommendations tailored to each department's security needs, incorporating advanced encryption features.",
+      "why": "Different departments face different risk levels.",
+      "how": "Tailored password generation."
+    },
+    {
+      "category": "Secure Coding & DevSecOps",
+      "domain": "Application Security",
+      "title": "Java Code Vulnerability Scan",
+      "description": "Detect SQL injection vulnerabilities in Java code.",
+      "severity": "Critical",
+      "difficulty": "Intermediate",
+      "tags": ["sast", "secure coding"],
+      "mitre": ["T1190"],
+      "prompt": "Analyze this block of Java code for potential security vulnerabilities that could lead to SQL injection attacks. Provide suggestions for mitigating these vulnerabilities.",
+      "why": "Early detection prevents costly breaches.",
+      "how": "Simulates SAST code analysis."
+    },
+    {
+      "category": "Secure Coding & DevSecOps",
+      "domain": "Application Security",
+      "title": "Mobile Encryption Best Practices",
+      "description": "Explain strong encryption methods for mobile apps.",
+      "severity": "High",
+      "difficulty": "Intermediate",
+      "tags": ["encryption", "mobile security"],
+      "mitre": ["T1552"],
+      "prompt": "Explain the most effective encryption techniques for protecting user data in mobile applications, including key management best practices.",
+      "why": "Mobile devices are easily lost or stolen.",
+      "how": "Focuses on cryptographic standards."
+    },
+    {
+      "category": "Secure Coding & DevSecOps",
+      "domain": "Application Security",
+      "title": "OAuth 2.0 Security Implementation",
+      "description": "Secure authentication flows using OAuth.",
+      "severity": "High",
+      "difficulty": "Advanced",
+      "tags": ["oauth", "authentication"],
+      "mitre": ["T1550"],
+      "prompt": "Outline the best practices for implementing OAuth 2.0 in a web application, focusing on securing the authentication tokens against theft and misuse.",
+      "why": "Misconfigured OAuth tokens can lead to account takeover.",
+      "how": "Architectural security review."
+    },
+    {
+      "category": "Secure Coding & DevSecOps",
+      "domain": "Application Security",
+      "title": "Android Security Checklist",
+      "description": "Security checklist for Android code reviews.",
+      "severity": "Medium",
+      "difficulty": "Intermediate",
+      "tags": ["android security", "code review"],
+      "mitre": ["T1409"],
+      "prompt": "Provide a detailed security checklist for conducting code reviews on Android applications, focusing on common vulnerabilities like improper session handling and insecure data storage.",
+      "why": "Mobile apps face unique threats.",
+      "how": "Checklist-based auditing."
+    },
+    {
+      "category": "Incident Response",
+      "domain": "Security Operations",
+      "title": "Unauthorized Access Response Plan",
+      "description": "Create a structured incident response plan.",
+      "severity": "Critical",
+      "difficulty": "Advanced",
+      "tags": ["incident response", "breach handling"],
+      "mitre": ["T1078"],
+      "prompt": "Given a detected unauthorized access in a corporate network, outline a step-by-step incident response plan, including immediate actions and long-term mitigation strategies.",
+      "why": "Fast incident response reduces breach impact.",
+      "how": "Uses SANS incident response lifecycle."
+    }
+  ]
 }

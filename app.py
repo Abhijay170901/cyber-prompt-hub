@@ -12,15 +12,6 @@ st.set_page_config(
 )
 
 # ---------------------------------------------------
-# TITLE
-# ---------------------------------------------------
-
-st.title("🛡️ AI-SecOps Prompt Intelligence Platform")
-st.subheader(
-    "AI-Assisted Cybersecurity Operations for Threat Detection, Incident Response, and Secure Development"
-)
-
-# ---------------------------------------------------
 # DARK SECURITY THEME
 # ---------------------------------------------------
 
@@ -49,6 +40,28 @@ h1,h2,h3 {
 """, unsafe_allow_html=True)
 
 # ---------------------------------------------------
+# TITLE
+# ---------------------------------------------------
+
+st.title("🛡️ AI-SecOps Prompt Intelligence Platform")
+
+st.subheader(
+    "AI-Assisted Cybersecurity Operations for Threat Detection, Incident Response, and Secure Development"
+)
+
+st.write(
+"""
+This platform provides **structured AI prompts for cybersecurity analysts**, covering:
+
+- Threat Detection  
+- Incident Response  
+- DevSecOps  
+- Phishing Investigation  
+- Security Governance
+"""
+)
+
+# ---------------------------------------------------
 # LOAD DATABASE
 # ---------------------------------------------------
 
@@ -62,26 +75,12 @@ except FileNotFoundError:
 missions = data["missions"]
 
 # ---------------------------------------------------
-# HEADER
-# ---------------------------------------------------
-
-st.title("🛡️ CyberPrompt AI Hub")
-st.subheader("AI-Powered Cybersecurity Operations Prompt Framework")
-
-st.write(
-"""
-This platform provides **structured AI prompts for cybersecurity analysts**, covering threat detection,
-incident response, DevSecOps, phishing analysis, and security governance.
-"""
-)
-
-# ---------------------------------------------------
-# SIDEBAR CONTROLS
+# SIDEBAR
 # ---------------------------------------------------
 
 st.sidebar.title("🎯 Mission Control")
 
-categories = sorted(list(set(m["category"] for m in missions)))
+categories = sorted(set(m["category"] for m in missions))
 
 selected_category = st.sidebar.selectbox(
     "Security Domain",
@@ -89,8 +88,6 @@ selected_category = st.sidebar.selectbox(
 )
 
 search_query = st.sidebar.text_input("🔎 Search Prompts")
-
-# MITRE FILTER
 
 mitre_set = sorted(set(
     technique
@@ -110,7 +107,7 @@ st.sidebar.write("🛡️ Cybersecurity Portfolio Project")
 st.sidebar.write("📍 Calgary, Canada")
 
 # ---------------------------------------------------
-# FILTER DATA
+# FILTER MISSIONS
 # ---------------------------------------------------
 
 filtered = missions
@@ -129,7 +126,7 @@ if search_query:
     ]
 
 # ---------------------------------------------------
-# METRICS DASHBOARD
+# DASHBOARD METRICS
 # ---------------------------------------------------
 
 st.markdown("### 📊 Security Mission Overview")
@@ -170,10 +167,12 @@ for i, m in enumerate(filtered):
 
         st.code(m["prompt"], language="text")
 
+        # FIXED DOWNLOAD BUTTON
         st.download_button(
             label="📥 Download Prompt",
             data=m["prompt"],
-            file_name="cyber_prompt.txt"
+            file_name=f"{m['title'].replace(' ', '_')}.txt",
+            key=f"download_{i}"
         )
 
         with st.expander("🔍 Threat Intelligence Breakdown"):
@@ -197,7 +196,7 @@ user_input = st.text_area(
     placeholder="Example: Create a threat hunting query for detecting suspicious PowerShell execution."
 )
 
-if st.button("Generate Security Prompt"):
+if st.button("Generate Security Prompt", key="generate_prompt"):
 
     if user_input:
 
@@ -221,9 +220,24 @@ Provide:
         st.code(generated_prompt)
 
 # ---------------------------------------------------
+# DOWNLOAD FULL DATABASE
+# ---------------------------------------------------
+
+st.divider()
+
+st.download_button(
+    "📂 Download Full Prompt Database",
+    data=json.dumps(data, indent=2),
+    file_name="cyberprompt_database.json",
+    key="download_full_db"
+)
+
+# ---------------------------------------------------
 # FOOTER
 # ---------------------------------------------------
 
 st.divider()
 
-st.caption("© 2026 Abhijay Nair | AI-SecOps Prompt Intelligence Platform | Cybersecurity Portfolio Project")
+st.caption(
+"© 2026 Abhijay Nair | AI-SecOps Prompt Intelligence Platform | Cybersecurity Portfolio Project"
+)

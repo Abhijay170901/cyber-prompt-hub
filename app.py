@@ -6,10 +6,18 @@ import json
 # ---------------------------------------------------
 
 st.set_page_config(
-    st.title("🛡️ AI-SecOps Prompt Intelligence Platform")
-st.subheader("AI-Assisted Cybersecurity Operations for Threat Detection, Incident Response, and Secure Development")
+    page_title="AI-SecOps Prompt Intelligence Platform",
     page_icon="🛡️",
     layout="wide"
+)
+
+# ---------------------------------------------------
+# TITLE
+# ---------------------------------------------------
+
+st.title("🛡️ AI-SecOps Prompt Intelligence Platform")
+st.subheader(
+    "AI-Assisted Cybersecurity Operations for Threat Detection, Incident Response, and Secure Development"
 )
 
 # ---------------------------------------------------

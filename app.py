@@ -189,7 +189,9 @@ for i, m in enumerate(filtered):
 # AI PROMPT GENERATOR
 # ---------------------------------------------------
 
-st.markdown("## 🤖 AI Security Prompt Generator")
+import streamlit as st
+
+st.markdown("## 🤖 AI Security Prompt Generator (MXDR Edition)")
 
 user_input = st.text_area(
     "Generate a cybersecurity investigation prompt",
@@ -197,28 +199,106 @@ user_input = st.text_area(
 )
 
 if st.button("Generate Security Prompt", key="generate_prompt"):
-
     if user_input:
-
         st.success("Suggested Prompt Structure")
+        
+        # Convert input to lowercase for keyword matching
+        query = user_input.lower()
+        
+        # DYNAMIC ROUTING: Choose the template based on keywords
+        
+        # 1. Email & Phishing
+        if any(word in query for word in ["phishing", "email", "spam", "inbox"]):
+            generated_prompt = f"""You are an Expert Tier 3 SOC Analyst.
+            
+Task: {user_input}
 
-        generated_prompt = f"""
-You are a senior SOC analyst.
+Please analyze this scenario and provide:
+1. Initial Access Vector analysis (Email headers, payloads, URLs)
+2. Indicators of Compromise (Domains, IPs, Hashes) to extract
+3. Microsoft Defender for Office 365 / Exchange KQL hunting queries
+4. Containment strategy (e.g., ZAP, URL blocking, account resets)
+"""
+            
+        # 2. Endpoint & Malware
+        elif any(word in query for word in ["powershell", "endpoint", "malware", "process", "exe"]):
+            generated_prompt = f"""You are a Senior Endpoint Detection and Response (EDR) Specialist.
+            
+Task: {user_input}
 
-Task:
-{user_input}
+Please analyze this endpoint activity and provide:
+1. MITRE ATT&CK Tactic & Technique mapping
+2. Microsoft Defender for Endpoint (MDE) KQL hunting queries
+3. Process tree analysis (Parent/Child relationships & Living off the Land binaries)
+4. Memory/Live Response evidence collection steps
+"""
+            
+        # 3. Identity & Access
+        elif any(word in query for word in ["login", "mfa", "identity", "credential", "brute"]):
+            generated_prompt = f"""You are a Cloud Identity Security Architect.
+            
+Task: {user_input}
 
-Provide:
+Please evaluate this identity threat and provide:
+1. Entra ID / Azure AD log analysis steps (Interactive vs. Non-Interactive sign-ins)
+2. KQL queries for tracking Impossible Travel, MFA Fatigue, or Token Theft
+3. Lateral movement risk assessment
+4. Conditional Access policy recommendations to prevent recurrence
+"""
 
-1. Threat context
-2. Detection methodology
-3. MITRE ATT&CK mapping
-4. Investigation steps
-5. Recommended remediation actions
+        # 4. Cloud Infrastructure (Azure/AWS)
+        elif any(word in query for word in ["azure", "cloud", "aws", "tenant", "storage", "vm"]):
+            generated_prompt = f"""You are a Cloud Security Posture Management (CSPM) Lead.
+            
+Task: {user_input}
+
+Please evaluate this cloud infrastructure event and provide:
+1. Cloud Control Plane analysis (e.g., Azure Activity Logs, AWS CloudTrail)
+2. Risk assessment for misconfigurations (e.g., Public S3 buckets, exposed NSGs)
+3. Sentinel KQL queries to track identity privilege escalation within the tenant
+4. Remediation steps using Azure CLI or PowerShell
+"""
+
+        # 5. Insider Threat & Data Loss
+        elif any(word in query for word in ["insider", "usb", "download", "exfiltration", "purview"]):
+            generated_prompt = f"""You are a Data Loss Prevention (DLP) and Insider Threat Investigator.
+            
+Task: {user_input}
+
+Please analyze this potential data exfiltration event and provide:
+1. Behavioral anomaly context (e.g., user resigning, unusual hours)
+2. Microsoft Purview / Endpoint DLP log investigation steps
+3. KQL queries to track large file archives (.zip, .rar) and external network transfers
+4. Legal/HR escalation protocols and immediate access revocation steps
+"""
+
+        # 6. Ransomware Operations
+        elif any(word in query for word in ["ransomware", "encrypt", "shadow copy", "crypto"]):
+            generated_prompt = f"""You are a Major Incident Response Commander.
+            
+Task: {user_input}
+
+Please analyze this high-severity ransomware event and provide:
+1. Immediate containment and network isolation protocols
+2. Hunting queries for Volume Shadow Copy deletion (`vssadmin`) and encryption binaries
+3. Lateral movement tracking (SMB/RDP abuse)
+4. Business Continuity / Disaster Recovery (BCDR) handoff recommendations
+"""
+
+        # 7. Fallback / General SOC
+        else:
+            generated_prompt = f"""You are a Senior Cyber Defender.
+            
+Task: {user_input}
+
+Provide a comprehensive investigation plan including:
+1. Threat context & potential business impact
+2. Specific Microsoft Sentinel/EDR detection methodologies
+3. Step-by-step investigation runbook
+4. Immediate containment and remediation actions
 """
 
         st.code(generated_prompt)
-
 # ---------------------------------------------------
 # DOWNLOAD FULL DATABASE
 # ---------------------------------------------------
